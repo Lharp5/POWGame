@@ -26,7 +26,7 @@ public class FighterPool {
 		
 		Block block = new Block();
 		
-		return new Fighter("FighterA", attacks, abilities, block);
+		return new Fighter("FighterA", attacks, abilities, block, 1);
 	}
 	
 	private Fighter fighterB(){
@@ -41,7 +41,7 @@ public class FighterPool {
 		abilities[2] = new Ability();
 		
 		Block block = new Block();
-		return new Fighter("FighterA", attacks, abilities, block);
+		return new Fighter("FighterA", attacks, abilities, block, 1);
 	}
 	
 	private Fighter fighterC(){
@@ -56,7 +56,7 @@ public class FighterPool {
 		abilities[2] = new Ability();
 		
 		Block block = new Block();
-		return new Fighter("FighterA", attacks, abilities, block);
+		return new Fighter("FighterA", attacks, abilities, block, 1);
 	}
 	
 	private Fighter fighterD(){
@@ -71,7 +71,7 @@ public class FighterPool {
 		abilities[2] = new Ability();
 		
 		Block block = new Block();
-		return new Fighter("FighterA", attacks, abilities, block);
+		return new Fighter("FighterA", attacks, abilities, block. 1);
 	}
 
 }

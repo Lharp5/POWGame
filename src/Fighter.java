@@ -8,15 +8,17 @@ public class Fighter {
 		private Ability [] abilities;
 		private Block block;
 		private int life;
+		private int speed;
 		
 		
-		public Fighter(String n, BasicAttack [] a, Ability [] ab, Block b){
+		public Fighter(String n, BasicAttack [] a, Ability [] ab, Block b, int s){
 			name=n;
 			attacks = a;
 			abilities = ab;
 			block = b;
 			
 			life=100;	
+			speed =s;
 		}
 
 }
