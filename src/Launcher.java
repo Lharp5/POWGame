@@ -23,5 +23,7 @@ public class Launcher extends JFrame{
 		controller.setVisible(true);
 		
 	}
+	
+	//need another window that will contain the actual game, will hide this one until game is over
 
 }
