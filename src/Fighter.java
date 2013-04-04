@@ -16,9 +16,7 @@ public class Fighter {
 			abilities = ab;
 			block = b;
 			
-			life=100;
-			
-			
+			life=100;	
 		}
 
 }
