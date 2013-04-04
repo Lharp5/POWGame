@@ -4,10 +4,10 @@ public class BasicAttack {
 	private String type;
 	private int damage;
 	private int range;
-	private int actionsPS;
-	private int actionDuration;
+	private double actionsPS;
+	private double actionDuration;
 	
-	public BasicAttack(String t, int d, int r, int a, int ad){
+	public BasicAttack(String t, int d, int r, double a, double ad){
 		
 		type=t;
 		damage =d;
