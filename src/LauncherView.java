@@ -5,12 +5,14 @@ import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class LauncherView extends JPanel {
 	//GridbagLayout generalLayout, p1Layout, p2Layout;
 	private JPanel playerOnePanel, playerTwoPanel;
 	private JButton[] p1Character, p2Charater;
 	private JButton startGame;
+	private JTextArea p1Desc, p2Desc;
 
 	public LauncherView() {
 		// general layout stuff
