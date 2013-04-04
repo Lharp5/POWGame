@@ -7,17 +7,18 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class LauncherView extends JPanel {
-	JPanel playerOnePanel, playerTwoPanel;
-	JButton[] p1Character, p2Charater;
-	JButton startGame;
+	//GridbagLayout generalLayout, p1Layout, p2Layout;
+	private JPanel playerOnePanel, playerTwoPanel;
+	private JButton[] p1Character, p2Charater;
+	private JButton startGame;
 
 	public LauncherView() {
-		// layout stuff
-		GridBagLayout layout = new GridBagLayout();
+		// general layout stuff
+		GridBagLayout generalLayout = new GridBagLayout();
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.insets = new Insets(5, 5, 5, 5); // default spacing
-		setLayout(layout);
-		
+		setLayout(generalLayout);
+
 		// Panels
 		//player one
 		playerOnePanel = new JPanel();
@@ -29,7 +30,7 @@ public class LauncherView extends JPanel {
 		constraints.fill = GridBagConstraints.BOTH;
 		constraints.weightx = 1;
 		constraints.weighty = 1;
-		layout.setConstraints(playerOnePanel, constraints);
+		generalLayout.setConstraints(playerOnePanel, constraints);
 		add(playerOnePanel);
 		
 		//player two
@@ -42,7 +43,7 @@ public class LauncherView extends JPanel {
 		constraints.fill = GridBagConstraints.BOTH;
 		constraints.weightx = 1;
 		constraints.weighty = 1;
-		layout.setConstraints(playerTwoPanel, constraints);
+		generalLayout.setConstraints(playerTwoPanel, constraints);
 		add(playerTwoPanel);
 
 		// buttons
@@ -54,7 +55,7 @@ public class LauncherView extends JPanel {
 		constraints.fill = GridBagConstraints.NONE;
 		constraints.weightx = 0;
 		constraints.weighty = 0;
-		layout.setConstraints(startGame, constraints);
+		generalLayout.setConstraints(startGame, constraints);
 		add(startGame);
 	}
 
