@@ -71,7 +71,7 @@ public class FighterPool {
 		abilities[2] = new Ability();
 		
 		Block block = new Block();
-		return new Fighter("FighterA", attacks, abilities, block. 1);
+		return new Fighter("FighterA", attacks, abilities, block, 1);
 	}
 
 }
