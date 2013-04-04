@@ -7,8 +7,8 @@ public class Launcher extends JFrame{
 	
 	public Launcher(String t) {
 		super(t);
-		view = new LauncherView();
-		getContentPane().setPreferredSize(view.getPreferredSize());
+		view = new LauncherView();	//creates the view, that stuff will be displyed on
+		getContentPane().setPreferredSize(view.getPreferredSize());	//makes the window fit around the view
 		pack();		
 		
 		add(view);
