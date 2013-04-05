@@ -41,9 +41,6 @@ public class Launcher extends JFrame{
 		
 	}
 	
-<<<<<<< HEAD
-	//need another window that will contain the actual game, will hide this one until game is over
-=======
 	private void handleStart() {
 		System.out.println("Start");
 	}
@@ -64,6 +61,5 @@ public class Launcher extends JFrame{
 				System.out.println("P2 button " + i);
 		}
 	}
->>>>>>> master
 
 }
