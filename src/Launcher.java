@@ -64,7 +64,8 @@ public class Launcher extends JFrame{
 				p2Index = i;
 			}
 		}
-		BattleUI battle = new BattleUI(controller.getTitle(), fighters[p1Index], fighters[p2Index]);
+		BattleController battle = new BattleController(controller.getTitle(), fighters[p1Index], fighters[p2Index]);
+		setVisible(false);
 	}
 	
 	private void handleP2Ready() {

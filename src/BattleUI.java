@@ -1,37 +1,32 @@
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
 @SuppressWarnings("serial")
-public class BattleUI extends JFrame{
-	private JPanel gamePanel;
+public class BattleUI extends JPanel{
 	private Battle battle;
 	private Fighter player1, player2;
 	
-	public BattleUI(String title, Fighter p1, Fighter p2) {
-		super(title);
+	public BattleUI(Fighter p1, Fighter p2, Battle b) {
+		battle = b;
 		player1 = p1;
 		player2 = p2;
-		gamePanel = new JPanel();
-		gamePanel.setPreferredSize(new Dimension(1280, 720));
-		
-		battle = new Battle(player1, player2);
-
-		getContentPane().setPreferredSize(gamePanel.getPreferredSize());
-		pack();		
-		add(gamePanel);
-		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setPreferredSize(new Dimension(1280, 720));
+		setBackground(Color.RED);
 		setVisible(true);
 	}
 	
-	private void draw() {
+	public void draw() {
+		Graphics g = this.getGraphics();
+		g.setColor(Color.BLUE);
+		g.fillRect(0, 0, 1290, 730);
 		
 	}
 	
-	private void update() {
+	public void update() {
 		
 	}
 
