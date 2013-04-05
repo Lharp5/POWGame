@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -6,6 +9,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.border.Border;
 
 public class LauncherView extends JPanel {
 	private Fighter[] model;
@@ -122,13 +126,19 @@ public class LauncherView extends JPanel {
 			System.out.println(selection[i]);
 			if (selection[i] == 1) {
 				p1Character[i].setEnabled(false);
+				p1Character[i].setBackground(Color.RED);
+				p2Character[i].setEnabled(false);
+				p2Character[i].setBackground(Color.RED);
+			} else if (selection[i] == 2) {
+				p2Character[i].setEnabled(false);
+				p2Character[i].setBackground(Color.BLUE);
+				p1Character[i].setEnabled(false);
+				p1Character[i].setBackground(Color.BLUE);
 			} else {
 				p1Character[i].setEnabled(true);
-			}
-			if (selection[i] == 2) {
-				p2Character[i].setEnabled(false);
-			} else {
+				p2Character[i].setBackground(Color.WHITE);
 				p2Character[i].setEnabled(true);
+				p1Character[i].setBackground(Color.WHITE);
 			}
 		}
 	}
