@@ -7,13 +7,15 @@ import javax.swing.JFrame;
 
 public class Launcher extends JFrame{
 	private static Launcher controller;
+	private Fighter[] fighters;
 	private FighterPool model;
 	private LauncherView view;
 	
 	public Launcher(String t) {
 		super(t);
 		model = new FighterPool();
-		view = new LauncherView(model);	//creates the view, that stuff will be displyed on
+		fighters = model.getFighters();
+		view = new LauncherView(fighters);	//creates the view, that stuff will be displyed on
 		getContentPane().setPreferredSize(view.getPreferredSize());	//makes the window fit around the view
 		pack();		
 		
@@ -26,7 +28,7 @@ public class Launcher extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				handleStart();}});
 		
-		for (int i = 0; i < model.getFighters().length; i++) {
+		for (int i = 0; i < fighters.length; i++) {
 				view.getP1Array()[i].addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						handleP1selection(e); }});
@@ -48,7 +50,7 @@ public class Launcher extends JFrame{
 	}
 	
 	private void handleP1selection(ActionEvent e) {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < fighters.length; i++) {
 			JButton button = view.getP1Array()[i];
 			if (button.equals(e.getSource()))
 				System.out.println("P1 button " + i);
@@ -57,7 +59,7 @@ public class Launcher extends JFrame{
 	}
 	
 	private void handleP2selection(ActionEvent e) {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < fighters.length; i++) {
 			JButton button = view.getP2Array()[i];
 			if (button.equals(e.getSource()))
 				System.out.println("P2 button " + i);

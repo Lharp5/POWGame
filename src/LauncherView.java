@@ -8,13 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 public class LauncherView extends JPanel {
-	private FighterPool model;
+	private Fighter[] model;
 	private JPanel playerOnePanel, playerTwoPanel;
 	private JButton[] p1Character, p2Character;
 	private JButton startGame;
 	private JTextArea p1Desc, p2Desc;
 
-	public LauncherView(FighterPool m) {
+	public LauncherView(Fighter[] m) {
 		model = m;
 		// general layout stuff
 		GridBagLayout generalLayout = new GridBagLayout();
@@ -71,9 +71,9 @@ public class LauncherView extends JPanel {
 		playerOnePanel.setLayout(player1Layout);
 
 		// buttons
-		p1Character = new JButton[model.getFighters().length];
+		p1Character = new JButton[model.length];
 		for (int i = 0; i < p1Character.length; i++) {
-			p1Character[i] = new JButton("Test" + i);
+			p1Character[i] = new JButton(model[i].getName());
 			p1Const.gridx = i;
 			p1Const.gridy = 0;
 			p1Const.gridwidth = 1;
@@ -93,9 +93,9 @@ public class LauncherView extends JPanel {
 		playerTwoPanel.setLayout(player2Layout);
 
 		// buttons
-		p2Character = new JButton[model.getFighters().length];
+		p2Character = new JButton[model.length];
 		for (int i = 0; i < p2Character.length; i++) {
-			p2Character[i] = new JButton("Test" + i);
+			p2Character[i] = new JButton(model[i].getName());
 			p2Const.gridx = i;
 			p2Const.gridy = 0;
 			p2Const.gridwidth = 1;
