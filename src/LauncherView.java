@@ -108,6 +108,22 @@ public class LauncherView extends JPanel {
 		}
 	}
 	
+	public void update() {
+		for (int i = 0; i < model.length; i++) {
+			System.out.println(model[i].getSelection());
+			if (model[i].getSelection() == 1) {
+				p1Character[i].setEnabled(false);
+			} else {
+				p1Character[i].setEnabled(true);
+			}
+			if (model[i].getSelection() == 2) {
+				p2Character[i].setEnabled(false);
+			} else {
+				p2Character[i].setEnabled(true);
+			}
+		}
+	}
+	
 	public JButton getStart() { return startGame; }
 	public JButton[] getP1Array() { return p1Character; }
 	public JButton[] getP2Array() { return p2Character; }

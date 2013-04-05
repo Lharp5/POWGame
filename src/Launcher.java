@@ -52,18 +52,28 @@ public class Launcher extends JFrame{
 	private void handleP1selection(ActionEvent e) {
 		for (int i = 0; i < fighters.length; i++) {
 			JButton button = view.getP1Array()[i];
-			if (button.equals(e.getSource()))
+			if (fighters[i].getSelection() == 1)
+				fighters[i].setSelection(0);
+			if (button.equals(e.getSource())) {
 				System.out.println("P1 button " + i);
+				fighters[i].setSelection(1);
+			}
+			
 		}
-		
+		view.update();
 	}
 	
 	private void handleP2selection(ActionEvent e) {
 		for (int i = 0; i < fighters.length; i++) {
 			JButton button = view.getP2Array()[i];
-			if (button.equals(e.getSource()))
+			if (fighters[i].getSelection() == 2)
+				fighters[i].setSelection(0);
+			if (button.equals(e.getSource())) {
 				System.out.println("P2 button " + i);
+				fighters[i].setSelection(2);
+			}
 		}
+		view.update();
 	}
 
 }
