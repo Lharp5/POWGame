@@ -26,7 +26,7 @@ public class Launcher extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				handleStart();}});
 		
-		for (int i = 0; i < model.getFighters.length; i++) {
+		for (int i = 0; i < model.getFighters().length; i++) {
 				view.getP1Array()[i].addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						handleP1selection(e); }});
