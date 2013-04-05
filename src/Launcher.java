@@ -1,3 +1,7 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
@@ -16,12 +20,46 @@ public class Launcher extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		
+		view.getStart().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				handleStart();}});
+		
+		for (int i = 0; i < 4; i++) {
+				view.getP1Array()[i].addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						handleP1selection(e); }});
+				view.getP2Array()[i].addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					handleP2selection(e);}});
+		}
+		
 	}
 	
 	public static void main(String[] args) {
 		controller = new Launcher("POWA!");
 		controller.setVisible(true);
 		
+	}
+	
+	private void handleStart() {
+		System.out.println("Start");
+	}
+	
+	private void handleP1selection(ActionEvent e) {
+		for (int i = 0; i < 4; i++) {
+			JButton button = view.getP1Array()[i];
+			if (button.equals(e.getSource()))
+				System.out.println("P1 button " + i);
+		}
+		
+	}
+	
+	private void handleP2selection(ActionEvent e) {
+		for (int i = 0; i < 4; i++) {
+			JButton button = view.getP2Array()[i];
+			if (button.equals(e.getSource()))
+				System.out.println("P2 button " + i);
+		}
 	}
 
 }

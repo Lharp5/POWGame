@@ -7,9 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class LauncherView extends JPanel {
-	//GridbagLayout generalLayout, p1Layout, p2Layout;
+	// GridbagLayout generalLayout, p1Layout, p2Layout;
 	private JPanel playerOnePanel, playerTwoPanel;
-	private JButton[] p1Character, p2Charater;
+	private JButton[] p1Character, p2Character;
 	private JButton startGame;
 
 	public LauncherView() {
@@ -20,9 +20,10 @@ public class LauncherView extends JPanel {
 		setLayout(generalLayout);
 
 		// Panels
-		//player one
+		// player one
 		playerOnePanel = new JPanel();
-		playerOnePanel.setBorder(BorderFactory.createTitledBorder("Player One"));
+		playerOnePanel
+				.setBorder(BorderFactory.createTitledBorder("Player One"));
 		constraints.gridx = 0;
 		constraints.gridy = 0;
 		constraints.gridwidth = 1;
@@ -32,10 +33,11 @@ public class LauncherView extends JPanel {
 		constraints.weighty = 1;
 		generalLayout.setConstraints(playerOnePanel, constraints);
 		add(playerOnePanel);
-		
-		//player two
+
+		// player two
 		playerTwoPanel = new JPanel();
-		playerTwoPanel.setBorder(BorderFactory.createTitledBorder("Player Two"));
+		playerTwoPanel
+				.setBorder(BorderFactory.createTitledBorder("Player Two"));
 		constraints.gridx = 1;
 		constraints.gridy = 0;
 		constraints.gridwidth = 1;
@@ -57,6 +59,53 @@ public class LauncherView extends JPanel {
 		constraints.weighty = 0;
 		generalLayout.setConstraints(startGame, constraints);
 		add(startGame);
-	}
 
+		// p1 panel
+		// p1 layout
+		GridBagLayout player1Layout = new GridBagLayout();
+		GridBagConstraints p1Const = new GridBagConstraints();
+		p1Const.insets = new Insets(5, 5, 5, 5); // default spacing
+		playerOnePanel.setLayout(player1Layout);
+
+		// buttons
+		p1Character = new JButton[4];
+		for (int i = 0; i < 4; i++) {
+			p1Character[i] = new JButton("Test" + i);
+			p1Const.gridx = i;
+			p1Const.gridy = 0;
+			p1Const.gridwidth = 1;
+			p1Const.gridheight = 1;
+			p1Const.fill = GridBagConstraints.NONE;
+			p1Const.weightx = 0;
+			p1Const.weighty = 0;
+			player1Layout.setConstraints(p1Character[i], p1Const);
+			playerOnePanel.add(p1Character[i]);
+		}
+
+		// p2 panel
+		// p2 layout
+		GridBagLayout player2Layout = new GridBagLayout();
+		GridBagConstraints p2Const = new GridBagConstraints();
+		p2Const.insets = new Insets(5, 5, 5, 5); // default spacing
+		playerTwoPanel.setLayout(player2Layout);
+
+		// buttons
+		p2Character = new JButton[4];
+		for (int i = 0; i < 4; i++) {
+			p2Character[i] = new JButton("Test" + i);
+			p2Const.gridx = i;
+			p2Const.gridy = 0;
+			p2Const.gridwidth = 1;
+			p2Const.gridheight = 1;
+			p2Const.fill = GridBagConstraints.NONE;
+			p2Const.weightx = 0;
+			p2Const.weighty = 0;
+			player2Layout.setConstraints(p2Character[i], p2Const);
+			playerTwoPanel.add(p2Character[i]);
+		}
+	}
+	
+	public JButton getStart() { return startGame; }
+	public JButton[] getP1Array() { return p1Character; }
+	public JButton[] getP2Array() { return p2Character; }
 }
