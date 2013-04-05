@@ -156,13 +156,17 @@ public class LauncherView extends JPanel {
 	}
 	
 	public void update() {
+		boolean p1ReadyE = false;
+		boolean p2ReadyE = false;
 		for (int i = 0; i < model.length; i++) {
 			if (selection[i] == 1) {
+				p1ReadyE = true;
 				p1Character[i].setEnabled(false);
 				p1Character[i].setBackground(Color.RED);
 				p2Character[i].setEnabled(false);
 				p2Character[i].setBackground(Color.RED);
 			} else if (selection[i] == 2) {
+				p2ReadyE = true;
 				p2Character[i].setEnabled(false);
 				p2Character[i].setBackground(Color.BLUE);
 				p1Character[i].setEnabled(false);
@@ -174,6 +178,15 @@ public class LauncherView extends JPanel {
 				p1Character[i].setBackground(Color.WHITE);
 			}
 		}
+		if (p1ReadyE)
+			p1Ready.setEnabled(true);
+		else
+			p1Ready.setEnabled(false);
+
+		if (p2ReadyE)
+			p2Ready.setEnabled(true);
+		else
+			p2Ready.setEnabled(false);
 		
 		if(p1ReadyBool)
 			p1Ready.setText("Un Ready");
