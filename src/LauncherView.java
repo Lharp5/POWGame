@@ -13,9 +13,18 @@ public class LauncherView extends JPanel {
 	private JButton[] p1Character, p2Character;
 	private JButton startGame;
 	private JTextArea p1Desc, p2Desc;
+	
+	private int[] selection;
+	
+	public int[] getSelection() { return selection; }
+	
+	public void setSelection(int i, int sel) {
+		selection[i] = sel;
+	}
 
 	public LauncherView(Fighter[] m) {
 		model = m;
+		selection = new int[model.length];
 		// general layout stuff
 		GridBagLayout generalLayout = new GridBagLayout();
 		GridBagConstraints constraints = new GridBagConstraints();
@@ -110,13 +119,13 @@ public class LauncherView extends JPanel {
 	
 	public void update() {
 		for (int i = 0; i < model.length; i++) {
-			System.out.println(model[i].getSelection());
-			if (model[i].getSelection() == 1) {
+			System.out.println(selection[i]);
+			if (selection[i] == 1) {
 				p1Character[i].setEnabled(false);
 			} else {
 				p1Character[i].setEnabled(true);
 			}
-			if (model[i].getSelection() == 2) {
+			if (selection[i] == 2) {
 				p2Character[i].setEnabled(false);
 			} else {
 				p2Character[i].setEnabled(true);

@@ -13,7 +13,6 @@ public class Fighter {
 		private int speed;
 		private int height;
 		private boolean air;
-		private int selected;	//0 = not selected, 1 = p1, 2 = p2
 		
 		private int xPos, yPos;
 		
@@ -33,15 +32,11 @@ public class Fighter {
 		//getting the block
 		public Block getBlock(){	return block;	}
 		
-		//setting the selection
-		public void setSelection(int s) { selected = s; }
-		
 		//get functions for name, life and speed, height, and selected
 		public String getName(){	return name;	}
 		public int getLife(){	return life;	}
 		public int getSpeed(){	return speed;	}
 		public int getHeight(){	return height;	}
-		public int getSelection(){ return selected; }
 		
 		
 		//getter and setting methods for air function.
@@ -51,7 +46,6 @@ public class Fighter {
 		
 		
 		public Fighter(String n, BasicAttack [] a, Ability [] ab, Block b, int s){
-			selected = 0;	//all fighters start unselected
 			
 			name=n;
 			attacks = a;
