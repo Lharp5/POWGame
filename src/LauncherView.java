@@ -8,13 +8,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 public class LauncherView extends JPanel {
-	// GridbagLayout generalLayout, p1Layout, p2Layout;
+	private FighterPool model;
 	private JPanel playerOnePanel, playerTwoPanel;
 	private JButton[] p1Character, p2Character;
 	private JButton startGame;
 	private JTextArea p1Desc, p2Desc;
 
-	public LauncherView() {
+	public LauncherView(FighterPool m) {
+		model = m;
 		// general layout stuff
 		GridBagLayout generalLayout = new GridBagLayout();
 		GridBagConstraints constraints = new GridBagConstraints();

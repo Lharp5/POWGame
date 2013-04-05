@@ -7,11 +7,13 @@ import javax.swing.JFrame;
 
 public class Launcher extends JFrame{
 	private static Launcher controller;
+	private FighterPool model;
 	private LauncherView view;
 	
 	public Launcher(String t) {
 		super(t);
-		view = new LauncherView();	//creates the view, that stuff will be displyed on
+		model = new FighterPool();
+		view = new LauncherView(model);	//creates the view, that stuff will be displyed on
 		getContentPane().setPreferredSize(view.getPreferredSize());	//makes the window fit around the view
 		pack();		
 		
