@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
+@SuppressWarnings("serial")
 public class Launcher extends JFrame{
 	private static Launcher controller;
 	private Fighter[] fighters;
@@ -22,7 +23,7 @@ public class Launcher extends JFrame{
 		add(view);
 		setSize(1280, 720);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setResizable(false);
+		setResizable(true);
 		
 		view.getStart().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -47,6 +48,7 @@ public class Launcher extends JFrame{
 	
 	private void handleStart() {
 		System.out.println("Start");
+		BattleUI battle = new BattleUI(controller.getTitle());
 	}
 	
 	private void handleP1selection(ActionEvent e) {

@@ -1,6 +1,4 @@
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -9,8 +7,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.border.Border;
 
+@SuppressWarnings("serial")
 public class LauncherView extends JPanel {
 	private Fighter[] model;
 	private JPanel playerOnePanel, playerTwoPanel;
