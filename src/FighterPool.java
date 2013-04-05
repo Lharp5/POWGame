@@ -12,12 +12,19 @@ public class FighterPool {
 		fighters[3] = fighterD();
 	}
 	
+	public void loadFighters(){
+		//code here to load fighters from a file.
+	}
+	
+	public Fighter[] getFighters(){
+		return fighters;
+	}
+	
 	//NOTE ALL THESE ARE ARBITRARY, no numbers or names are significant yet
 	private Fighter fighterA(){
 		
-		BasicAttack [] attacks = new BasicAttack[3];
-		attacks[0] = new BasicAttack("Right Punch", 5, 10, 1, 1);
-		attacks[1] = new BasicAttack("Left Punch", 5, 10, 1, 1);
+		BasicAttack [] attacks = new BasicAttack[2];
+		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
 		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
@@ -31,9 +38,8 @@ public class FighterPool {
 	}
 	
 	private Fighter fighterB(){
-		BasicAttack [] attacks = new BasicAttack[3];
-		attacks[0] = new BasicAttack("Right Punch", 5, 10, 1, 1);
-		attacks[1] = new BasicAttack("Left Punch", 5, 10, 1, 1);
+		BasicAttack [] attacks = new BasicAttack[2];
+		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
 		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
@@ -46,9 +52,8 @@ public class FighterPool {
 	}
 	
 	private Fighter fighterC(){
-		BasicAttack [] attacks = new BasicAttack[3];
-		attacks[0] = new BasicAttack("Right Punch", 5, 10, 1, 1);
-		attacks[1] = new BasicAttack("Left Punch", 5, 10, 1, 1);
+		BasicAttack [] attacks = new BasicAttack[2];
+		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
 		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);		
 		
 		Ability [] abilities = new Ability[3];
@@ -61,9 +66,8 @@ public class FighterPool {
 	}
 	
 	private Fighter fighterD(){
-		BasicAttack [] attacks = new BasicAttack[3];
-		attacks[0] = new BasicAttack("Right Punch", 5, 10, 1, 1);
-		attacks[1] = new BasicAttack("Left Punch", 5, 10, 1, 1);
+		BasicAttack [] attacks = new BasicAttack[2];
+		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
 		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
