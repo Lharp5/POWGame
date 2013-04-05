@@ -28,6 +28,12 @@ public class Launcher extends JFrame{
 		view.getStart().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				handleStart();}});
+		view.getP1Ready().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				handleP1Ready();}});
+		view.getP2Ready().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				handleP2Ready();}});
 		
 		for (int i = 0; i < fighters.length; i++) {
 				view.getP1Array()[i].addActionListener(new ActionListener() {
@@ -49,6 +55,37 @@ public class Launcher extends JFrame{
 	private void handleStart() {
 		System.out.println("Start");
 		BattleUI battle = new BattleUI(controller.getTitle());
+	}
+	
+	private void handleP2Ready() {boolean ready = false;
+		for (int i = 0; i < fighters.length; i++) {
+			if (view.getSelection()[i] == 2) {
+				ready = true;
+				break;
+			}
+		}
+		if (view.getP2Ready().getText().equals("Ready!") && ready) {
+			view.setP2Ready(true);
+		} else {
+			view.setP2Ready(false);
+		}
+		view.update();
+	}
+	
+	private void handleP1Ready() {
+		boolean ready = false;
+		for (int i = 0; i < fighters.length; i++) {
+			if (view.getSelection()[i] == 1) {
+				ready = true;
+				break;
+			}
+		}
+		if (view.getP1Ready().getText().equals("Ready!") && ready) {
+			view.setP1Ready(true);
+		} else {
+			view.setP1Ready(false);
+		}
+		view.update();
 	}
 	
 	private void handleP1selection(ActionEvent e) {
