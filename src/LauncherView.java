@@ -71,8 +71,8 @@ public class LauncherView extends JPanel {
 		playerOnePanel.setLayout(player1Layout);
 
 		// buttons
-		p1Character = new JButton[4];
-		for (int i = 0; i < 4; i++) {
+		p1Character = new JButton[model.getFighters.length];
+		for (int i = 0; i < p1Character.length; i++) {
 			p1Character[i] = new JButton("Test" + i);
 			p1Const.gridx = i;
 			p1Const.gridy = 0;
@@ -93,8 +93,8 @@ public class LauncherView extends JPanel {
 		playerTwoPanel.setLayout(player2Layout);
 
 		// buttons
-		p2Character = new JButton[4];
-		for (int i = 0; i < 4; i++) {
+		p2Character = new JButton[model.getFighters.length];
+		for (int i = 0; i < p2Character.length; i++) {
 			p2Character[i] = new JButton("Test" + i);
 			p2Const.gridx = i;
 			p2Const.gridy = 0;
