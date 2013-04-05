@@ -7,6 +7,12 @@ public class BasicAttack {
 	private double actionsPS;
 	private double actionDuration;
 	
+	//get methods
+	public int getDamage(){	return damage;	}
+	public int getRange(){	return range;	}
+	public double getDPS(){	return actionsPS;	}
+	public double actionDuration(){	return actionDuration;	}
+	
 	public BasicAttack(String t, int d, int r, double a, double ad){
 		
 		//name of attack

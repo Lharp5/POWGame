@@ -25,7 +25,7 @@ public class FighterPool {
 		
 		BasicAttack [] attacks = new BasicAttack[2];
 		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
-		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);
+		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
 		abilities[0] = new Ability("Ability 1A", 30, 15, 0, true, false, false);
@@ -40,7 +40,7 @@ public class FighterPool {
 	private Fighter fighterB(){
 		BasicAttack [] attacks = new BasicAttack[2];
 		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
-		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);
+		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
 		abilities[0] = new Ability("Ability 1B", 30, 15, 0, true, false, false);
@@ -54,7 +54,7 @@ public class FighterPool {
 	private Fighter fighterC(){
 		BasicAttack [] attacks = new BasicAttack[2];
 		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
-		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);		
+		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);		
 		
 		Ability [] abilities = new Ability[3];
 		abilities[0] = new Ability("Ability 1C", 30, 15, 0, true, false, false);
@@ -68,7 +68,7 @@ public class FighterPool {
 	private Fighter fighterD(){
 		BasicAttack [] attacks = new BasicAttack[2];
 		attacks[0] = new BasicAttack("Punch", 5, 10, 1, 1);
-		attacks[2] = new BasicAttack("Kick", 15, 20, 0.5, 2);
+		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
 		abilities[0] = new Ability("Ability 1D", 30, 15, 0, true, false, false);
