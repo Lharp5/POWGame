@@ -15,13 +15,12 @@ public class BattleUI extends JPanel{
 		player1 = p1;
 		player2 = p2;
 		setPreferredSize(new Dimension(1280, 720));
-		setBackground(Color.RED);
 		setVisible(true);
 	}
 	
 	public void draw() {
 		Graphics g = this.getGraphics();
-		g.setColor(Color.BLUE);
+		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, 1290, 730);
 		
 	}
