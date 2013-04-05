@@ -11,13 +11,17 @@ public class Fighter {
 		private Block block;
 		private int life;
 		private int speed;
+		private int height;
 		private boolean air;
 		
 		private int xPos, yPos;
 		
-		//set methods for Xpos Ypos
+		//set/get methods for Xpos Ypos
 		public void setX(int x){	xPos = x;	}
 		public void setY(int y){	yPos = y;	}
+		
+		public int getX(){	return xPos;	}
+		public int getY(){	return yPos;	}
 		
 		//getting the basic Attacks
 		public BasicAttack getAttack(int i){	return attacks[i];	}
@@ -28,9 +32,11 @@ public class Fighter {
 		//getting the block
 		public Block getBlock(){	return block;	}
 		
-		//get functions for life and speed
-		public int getLife(){return life;	}
+		//get functions for name, life and speed, and height
+		public String getName(){	return name;	}
+		public int getLife(){	return life;	}
 		public int getSpeed(){	return speed;	}
+		public int getHeight(){	return height;	}
 		
 		
 		//getter and setting methods for air function.
@@ -54,6 +60,9 @@ public class Fighter {
 			//basic pre-set up x and y positions
 			xPos =-99;
 			yPos=-99;
+			
+			//to be changed for character model height;
+			height = 10;
 		}
 
 }
