@@ -57,14 +57,8 @@ public class Launcher extends JFrame{
 		BattleUI battle = new BattleUI(controller.getTitle());
 	}
 	
-	private void handleP2Ready() {boolean ready = false;
-		for (int i = 0; i < fighters.length; i++) {
-			if (view.getSelection()[i] == 2) {
-				ready = true;
-				break;
-			}
-		}
-		if (view.getP2Ready().getText().equals("Ready!") && ready) {
+	private void handleP2Ready() {
+		if (view.getP2Ready().getText().equals("Ready!")) {
 			view.setP2Ready(true);
 		} else {
 			view.setP2Ready(false);
@@ -73,14 +67,7 @@ public class Launcher extends JFrame{
 	}
 	
 	private void handleP1Ready() {
-		boolean ready = false;
-		for (int i = 0; i < fighters.length; i++) {
-			if (view.getSelection()[i] == 1) {
-				ready = true;
-				break;
-			}
-		}
-		if (view.getP1Ready().getText().equals("Ready!") && ready) {
+		if (view.getP1Ready().getText().equals("Ready!")) {
 			view.setP1Ready(true);
 		} else {
 			view.setP1Ready(false);
