@@ -55,7 +55,7 @@ public class BattleController extends JFrame implements ActionListener{
 		if (key.equals("W")) {
 			if(!player1.inAir()) {
 				player1.startJump();
-				player1.setYSpeed(10);
+				player1.setYSpeed(20);
 			}
 		}
 		if (key.equals("D")) {
