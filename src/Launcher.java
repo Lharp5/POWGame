@@ -64,6 +64,7 @@ public class Launcher extends JFrame{
 				p2Index = i;
 			}
 		}
+		@SuppressWarnings("unused")
 		BattleController battle = new BattleController(controller.getTitle(), fighters[p1Index], fighters[p2Index]);
 		setVisible(false);
 	}
