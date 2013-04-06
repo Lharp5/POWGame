@@ -22,13 +22,17 @@ public class Fighter {
 		//set/get methods for Xpos Ypos
 		public void setX(double x){	xPos = x;	}
 		public void setY(double y){	yPos = y;	}
-		public void setYSpeed(int y){ ySpeed = y; }
-		public void yFall(){ ySpeed--; }
-		public void xAccel(){ xSpeed+= 2; }
-		public void xDecel(){ xSpeed--; }
 		
-		public int getYSpeed(){ return ySpeed; }
-		public int getXSpeed(){ return xSpeed; }
+		//use for player acceleration in vertical and horizontal directions
+		public void setYSpeed(int y){ ySpeed = y; }	//set a speed relative to how high the player will jump
+		public void yFall(){	ySpeed--;	}	//player will slow down and then fall vertically
+		public void yStop(){	ySpeed = 0;	}
+		public void xAccel(){	xSpeed+= 2;	}	//player will walk faster
+		public void xDecel(){	xSpeed--;	}	//player will be slowed down
+		public void xStop(){	xSpeed = 0;	}
+		
+		public int getYSpeed(){ return ySpeed;	}
+		public int getXSpeed(){ return xSpeed;	}
 		public double getX(){	return xPos;	}
 		public double getY(){	return yPos;	}
 		
