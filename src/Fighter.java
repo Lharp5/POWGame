@@ -7,6 +7,7 @@ public class Fighter {
 		
 		private BasicAttack [] attacks;
 		
+		private String description;
 		private Ability [] abilities;
 		private Block block;
 		private int life;
@@ -37,6 +38,7 @@ public class Fighter {
 		public int getLife(){	return life;	}
 		public int getSpeed(){	return speed;	}
 		public int getHeight(){	return height;	}
+		public String getDescription() { return description; }
 		
 		
 		//getter and setting methods for air function.
@@ -64,6 +66,8 @@ public class Fighter {
 			
 			//to be changed for character model height;
 			height = 10;
+			
+			description = "This is a test, this is a test this is a test\nThis is s new line test. Testing testing testing";
 		}
 
 }

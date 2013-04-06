@@ -189,12 +189,14 @@ public class LauncherView extends JPanel {
 				p1Character[i].setBackground(Color.RED);
 				p2Character[i].setEnabled(false);
 				p2Character[i].setBackground(Color.RED);
+				p1Desc.setText(model[i].getDescription());
 			} else if (selection[i] == 2) {
 				p2ReadyE = true;
 				p2Character[i].setEnabled(false);
 				p2Character[i].setBackground(Color.BLUE);
 				p1Character[i].setEnabled(false);
 				p1Character[i].setBackground(Color.BLUE);
+				p2Desc.setText(model[i].getDescription());
 			} else {
 				p1Character[i].setEnabled(true);
 				p2Character[i].setBackground(Color.WHITE);
