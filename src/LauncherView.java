@@ -102,7 +102,7 @@ public class LauncherView extends JPanel {
 			p1Const.gridwidth = 1;
 			p1Const.gridheight = 1;
 			p1Const.fill = GridBagConstraints.NONE;
-			p1Const.weightx = 0;
+			p1Const.weightx = 1;
 			p1Const.weighty = 0;
 			player1Layout.setConstraints(p1Character[i], p1Const);
 			playerOnePanel.add(p1Character[i]);
@@ -118,6 +118,18 @@ public class LauncherView extends JPanel {
 		p1Const.weighty = 0;
 		player1Layout.setConstraints(p1Ready, p1Const);
 		playerOnePanel.add(p1Ready);
+		
+		// text area
+		p1Desc = new JTextArea();
+		p1Const.gridx = 0;
+		p1Const.gridy = 19;
+		p1Const.gridwidth = 5;
+		p1Const.gridheight = 1;
+		p1Const.fill = GridBagConstraints.BOTH;
+		p1Const.weightx = 1;
+		p1Const.weighty = 1;
+		player1Layout.setConstraints(p1Desc, p1Const);
+		playerOnePanel.add(p1Desc);
 		
 
 		// p2 panel
@@ -136,7 +148,7 @@ public class LauncherView extends JPanel {
 			p2Const.gridwidth = 1;
 			p2Const.gridheight = 1;
 			p2Const.fill = GridBagConstraints.NONE;
-			p2Const.weightx = 0;
+			p2Const.weightx = 1;
 			p2Const.weighty = 0;
 			player2Layout.setConstraints(p2Character[i], p2Const);
 			playerTwoPanel.add(p2Character[i]);
@@ -151,6 +163,18 @@ public class LauncherView extends JPanel {
 		p2Const.weighty = 0;
 		player2Layout.setConstraints(p2Ready, p2Const);
 		playerTwoPanel.add(p2Ready);
+		
+		// text area
+		p2Desc = new JTextArea();
+		p2Const.gridx = 0;
+		p2Const.gridy = 19;
+		p2Const.gridwidth = 5;
+		p2Const.gridheight = 1;
+		p2Const.fill = GridBagConstraints.BOTH;
+		p2Const.weightx = 1;
+		p2Const.weighty = 1;
+		player2Layout.setConstraints(p2Desc, p2Const);
+		playerTwoPanel.add(p2Desc);
 		
 		update();
 	}
