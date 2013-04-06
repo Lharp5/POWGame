@@ -51,7 +51,12 @@ public class BattleUI extends JPanel{
 	
 	public void update() {
 		//will add vertical acceleration here
-		
+		if (player1.getY() < 600) {
+			player1.yFall();
+		} else {
+			//player1.
+		}
+		player1.setY(player1.getY() + player1.getYSpeed());
 	}
 
 }
