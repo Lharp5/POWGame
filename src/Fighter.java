@@ -14,8 +14,9 @@ public class Fighter {
 		private int speed;
 		private int height;
 		private boolean air;
-		
+		private int width; //width of the character model.
 		private int xPos, yPos;
+		private boolean disabled; //for Character effects
 		
 		//set/get methods for Xpos Ypos
 		public void setX(int x){	xPos = x;	}
@@ -33,11 +34,17 @@ public class Fighter {
 		//getting the block
 		public Block getBlock(){	return block;	}
 		
+		//disabled?
+		public boolean isDisabled(){	return disabled;	}
+		public void lockedDown(){	disabled=true;		}
+		public void free(){	disabled=false;	}
+		
 		//get functions for name, life and speed, height, and selected
 		public String getName(){	return name;	}
 		public int getLife(){	return life;	}
 		public int getSpeed(){	return speed;	}
 		public int getHeight(){	return height;	}
+		public int getWidth() {	return width;	}
 		public String getDescription() { return description; }
 		
 		
@@ -45,6 +52,8 @@ public class Fighter {
 		public boolean inAir(){		return air;		}
 		public void startJump(){	air = true;		}
 		public void endJump(){		air = false;	}
+		
+		//returning whether or not the player is disabled
 		
 		
 		public Fighter(String n, BasicAttack [] a, Ability [] ab, Block b, int s){
@@ -56,6 +65,7 @@ public class Fighter {
 			
 			life=100;	
 			speed =s;
+			disabled = false;
 			
 			//inAir is to tell if a player is jumping in air, to add jumping abilities/fights.
 			air=false;
@@ -67,7 +77,13 @@ public class Fighter {
 			//to be changed for character model height;
 			height = 10;
 			
+			width = 5; //just for testing changed to width of image?
+			
 			description = "This is a test, this is a test this is a test\nThis is s new line test. Testing testing testing";
+		}
+		
+		public void hurt(int d){
+			life-=d;
 		}
 
 }
