@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -7,22 +8,35 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+@SuppressWarnings("serial")
 public class LauncherView extends JPanel {
 	private Fighter[] model;
 	private JPanel playerOnePanel, playerTwoPanel;
 	private JButton[] p1Character, p2Character;
-	private JButton startGame;
+	private JButton startGame, p1Ready, p2Ready;
 	private JTextArea p1Desc, p2Desc;
 	
 	private int[] selection;
+	private boolean p1ReadyBool, p2ReadyBool;
 	
 	public int[] getSelection() { return selection; }
+	public JButton getP1Ready() { return p1Ready; }
+	public JButton getP2Ready() { return p2Ready; }
+	
+	public void setP1Ready(boolean ready) { 
+		p1ReadyBool = ready;
+	}
+	public void setP2Ready(boolean ready) {
+		p2ReadyBool = ready;
+	}
 	
 	public void setSelection(int i, int sel) {
 		selection[i] = sel;
 	}
 
 	public LauncherView(Fighter[] m) {
+		p2ReadyBool = p1ReadyBool = false;
+		
 		model = m;
 		selection = new int[model.length];
 		// general layout stuff
@@ -88,11 +102,35 @@ public class LauncherView extends JPanel {
 			p1Const.gridwidth = 1;
 			p1Const.gridheight = 1;
 			p1Const.fill = GridBagConstraints.NONE;
-			p1Const.weightx = 0;
+			p1Const.weightx = 1;
 			p1Const.weighty = 0;
 			player1Layout.setConstraints(p1Character[i], p1Const);
 			playerOnePanel.add(p1Character[i]);
 		}
+		
+		p1Ready = new JButton("Ready!");
+		p1Const.gridx = 0;
+		p1Const.gridy = 20;
+		p1Const.gridwidth = 5;
+		p1Const.gridheight = 1;
+		p1Const.fill = GridBagConstraints.NONE;
+		p1Const.weightx = 0;
+		p1Const.weighty = 0;
+		player1Layout.setConstraints(p1Ready, p1Const);
+		playerOnePanel.add(p1Ready);
+		
+		// text area
+		p1Desc = new JTextArea();
+		p1Const.gridx = 0;
+		p1Const.gridy = 19;
+		p1Const.gridwidth = 5;
+		p1Const.gridheight = 1;
+		p1Const.fill = GridBagConstraints.BOTH;
+		p1Const.weightx = 1;
+		p1Const.weighty = 1;
+		player1Layout.setConstraints(p1Desc, p1Const);
+		playerOnePanel.add(p1Desc);
+		
 
 		// p2 panel
 		// p2 layout
@@ -110,26 +148,83 @@ public class LauncherView extends JPanel {
 			p2Const.gridwidth = 1;
 			p2Const.gridheight = 1;
 			p2Const.fill = GridBagConstraints.NONE;
-			p2Const.weightx = 0;
+			p2Const.weightx = 1;
 			p2Const.weighty = 0;
 			player2Layout.setConstraints(p2Character[i], p2Const);
 			playerTwoPanel.add(p2Character[i]);
 		}
+		p2Ready = new JButton("Ready!");
+		p2Const.gridx = 0;
+		p2Const.gridy = 20;
+		p2Const.gridwidth = 5;
+		p2Const.gridheight = 1;
+		p2Const.fill = GridBagConstraints.NONE;
+		p2Const.weightx = 0;
+		p2Const.weighty = 0;
+		player2Layout.setConstraints(p2Ready, p2Const);
+		playerTwoPanel.add(p2Ready);
+		
+		// text area
+		p2Desc = new JTextArea();
+		p2Const.gridx = 0;
+		p2Const.gridy = 19;
+		p2Const.gridwidth = 5;
+		p2Const.gridheight = 1;
+		p2Const.fill = GridBagConstraints.BOTH;
+		p2Const.weightx = 1;
+		p2Const.weighty = 1;
+		player2Layout.setConstraints(p2Desc, p2Const);
+		playerTwoPanel.add(p2Desc);
+		
+		update();
 	}
 	
 	public void update() {
+		boolean p1ReadyE = false;
+		boolean p2ReadyE = false;
 		for (int i = 0; i < model.length; i++) {
-			System.out.println(selection[i]);
 			if (selection[i] == 1) {
+				p1ReadyE = true;
 				p1Character[i].setEnabled(false);
+				p1Character[i].setBackground(Color.RED);
+				p2Character[i].setEnabled(false);
+				p2Character[i].setBackground(Color.RED);
+			} else if (selection[i] == 2) {
+				p2ReadyE = true;
+				p2Character[i].setEnabled(false);
+				p2Character[i].setBackground(Color.BLUE);
+				p1Character[i].setEnabled(false);
+				p1Character[i].setBackground(Color.BLUE);
 			} else {
 				p1Character[i].setEnabled(true);
-			}
-			if (selection[i] == 2) {
-				p2Character[i].setEnabled(false);
-			} else {
+				p2Character[i].setBackground(Color.WHITE);
 				p2Character[i].setEnabled(true);
+				p1Character[i].setBackground(Color.WHITE);
 			}
+		}
+		if (p1ReadyE)
+			p1Ready.setEnabled(true);
+		else
+			p1Ready.setEnabled(false);
+
+		if (p2ReadyE)
+			p2Ready.setEnabled(true);
+		else
+			p2Ready.setEnabled(false);
+		
+		if(p1ReadyBool)
+			p1Ready.setText("Un Ready");
+		else
+			p1Ready.setText("Ready!");
+		if(p2ReadyBool) 
+			p2Ready.setText("Un Ready");
+		else
+			p2Ready.setText("Ready!");
+		
+		if(p1ReadyBool && p2ReadyBool) {
+			startGame.setEnabled(true);
+		} else {
+			startGame.setEnabled(false);
 		}
 	}
 	
