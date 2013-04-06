@@ -17,11 +17,14 @@ public class Fighter {
 		private int width; //width of the character model.
 		private double xPos, yPos;
 		private int xSpeed, ySpeed;	//used for acceleration
+		private int xDir;	//1 is forwards, -1 is backwards
 		private boolean disabled; //for Character effects
 		
 		//set/get methods for Xpos Ypos
 		public void setX(double x){	xPos = x;	}
 		public void setY(double y){	yPos = y;	}
+		public void setDirF(){	xDir = 1;	}
+		public void setDirB(){	xDir = -1;	}
 		
 		//use for player acceleration in vertical and horizontal directions
 		public void setYSpeed(int y){ ySpeed = y; }	//set a speed relative to how high the player will jump
@@ -31,6 +34,7 @@ public class Fighter {
 		public void xDecel(){	xSpeed--;	}	//player will be slowed down
 		public void xStop(){	xSpeed = 0;	}
 		
+		public int getxDir(){	return xDir;	}
 		public int getYSpeed(){ return ySpeed;	}
 		public int getXSpeed(){ return xSpeed;	}
 		public double getX(){	return xPos;	}
