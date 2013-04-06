@@ -27,15 +27,16 @@ public class BattleUI extends JPanel{
 	
 	public void dbDraw() {
 		g = (Graphics2D) this.getGraphics();
-		dbImage = createImage(1290, 730);
-		dbg = (Graphics2D) dbImage.getGraphics();
-		draw(dbg);
-		g.drawImage(dbImage, 0, 0, this);
+		dbImage = createImage(1290, 730);	//creates an off screen image
+		dbg = (Graphics2D) dbImage.getGraphics();	//gets graphics for the off scrren image
+		draw(dbg);		//draws to offscreen image
+		g.drawImage(dbImage, 0, 0, this);	//moves image onto the screen.
 	}
 	
 	private void draw(Graphics2D g2) {
 		update();
 		g2.setColor(Color.DARK_GRAY);
+		//testing for flicker
 		g2.fillRect(0, 0, 1290, 730);
 		g2.setColor(Color.RED);
 		g2.fillOval((int)o1x, (int)o1y, 50, 50);
