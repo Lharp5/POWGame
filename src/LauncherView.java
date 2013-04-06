@@ -133,7 +133,7 @@ public class LauncherView extends JPanel {
 		p1Const.weighty = 1;
 		player1Layout.setConstraints(p1Desc, p1Const);
 		playerOnePanel.add(p1Desc);
-		p1Desc.setEnabled(false);
+		p1Desc.setEditable(false);
 		
 		p1Stats = new JTextArea();
 		p1Const.gridx = 3;
@@ -145,10 +145,10 @@ public class LauncherView extends JPanel {
 		p1Const.weighty = 0;
 		player1Layout.setConstraints(p1Stats, p1Const);
 		playerOnePanel.add(p1Stats);
-		p1Stats.setEnabled(false);
+		p1Stats.setEditable(false);
 		
 		// Label
-		p1Image = new JLabel(new ImageIcon("res/unknown.png"));
+		p1Image = new JLabel(new ImageIcon("res/portraits/unknown.png"));
 		p1Const.gridx = 0;
 		p1Const.gridy = 18;
 		p1Const.gridwidth = 3;
@@ -202,7 +202,7 @@ public class LauncherView extends JPanel {
 		p2Const.weighty = 1;
 		player2Layout.setConstraints(p2Desc, p2Const);
 		playerTwoPanel.add(p2Desc);
-		p2Desc.setEnabled(false);
+		p2Desc.setEditable(false);
 		
 		p2Stats = new JTextArea();
 		p2Const.gridx = 3;
@@ -214,10 +214,10 @@ public class LauncherView extends JPanel {
 		p2Const.weighty = 0;
 		player2Layout.setConstraints(p2Stats, p2Const);
 		playerTwoPanel.add(p2Stats);
-		p2Stats.setEnabled(false);
+		p2Stats.setEditable(false);
 		
 		// Label
-		p2Image = new JLabel(new ImageIcon("res/unknown.png"));
+		p2Image = new JLabel(new ImageIcon("res/portraits/unknown.png"));
 		p2Const.gridx = 0;
 		p2Const.gridy = 18;
 		p2Const.gridwidth = 3;
