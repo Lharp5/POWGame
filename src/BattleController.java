@@ -15,9 +15,12 @@ public class BattleController extends JFrame implements ActionListener{
 	private BattleUI battleUI;
 	private Battle battle;
 	private Timer time;
+	private Fighter player1, player2;
 	
 	public BattleController(String string, Fighter p1, Fighter p2) {
 		super(string);
+		player1 = p1;
+		player2 = p2;
 		battle = new Battle(p1, p2);
 		battleUI = new BattleUI(p1, p2, battle);
 		
@@ -41,6 +44,24 @@ public class BattleController extends JFrame implements ActionListener{
 	}
 	
 	private void pressedKey(KeyEvent e) {
+		@SuppressWarnings("static-access")
+		String key = e.getKeyText(e.getKeyCode());
+		
+		System.out.println(key);
+		//p1Controls
+		if (key.equals("A")) {
+			player1.setX(player1.getX() - 10 * player1.getSpeed());
+		}
+		if (key.equals("W")) {
+			//P1 jump
+		}
+		if (key.equals("D")) {
+			player1.setX(player1.getX() + 10 * player1.getSpeed());
+		}
+		if (key.equals("S")) {
+			//P1 duck/block
+		}
+		
 		battleUI.update();
 	}
 

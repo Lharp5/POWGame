@@ -12,8 +12,6 @@ public class BattleUI extends JPanel{
 	private Fighter player1, player2;
 	private Graphics2D g, dbg;
 	private Image dbImage;
-	double o1x, o1y, o2x, o2y;
-	int o1yD, o1xD, o2yD, o2xD;
 	
 	public BattleUI(Fighter p1, Fighter p2, Battle b) {
 		battle = b;
@@ -23,8 +21,12 @@ public class BattleUI extends JPanel{
 		setDoubleBuffered(true);
 		setVisible(true);
 		
-		o1x = o1y = o2x = o2y = 0;
-		o1yD = o1xD = o2yD = o2xD = 1;
+		//setting initial positions
+		player1.setX(50);
+		player1.setY(600);
+		
+		player2.setX(1230);
+		player2.setY(600);
 	}
 	
 	public void dbDraw() {
@@ -41,33 +43,15 @@ public class BattleUI extends JPanel{
 		//testing for flicker
 		g2.fillRect(0, 0, 1290, 730);
 		g2.setColor(Color.RED);
-		g2.fillOval((int)o1x, (int)o1y, 50, 50);
+		g2.fillOval((int)player1.getX(), (int)player1.getY(), 50, 50); //p1
 		g2.setColor(Color.BLUE);
-		g2.fillOval((int)o2x, (int)o2y, 60, 20);
+		g2.fillOval((int)player2.getX(), (int)player2.getY(), 50, 50); //p2
 	}
 	
 	
 	public void update() {
-		if (o1x > 1290)
-			o1xD = -1;
-		if (o1x < 0) 
-			o1xD = 1;
-		if (o1y > 730)
-			o1yD = -1;
-		if (o1y < 0) 
-			o1yD = 1;
-		if (o2x > 1290)
-			o2xD = -1;
-		if (o2x < 0) 
-			o2xD = 1;
-		if (o2y > 730)
-			o2yD = -1;
-		if (o2y < 0) 
-			o2yD = 1;
-		o1x += 2 * o1xD;
-		o1y += 0.5 * o1yD;
-		o2x +=0.5 * o2xD;
-		o2y += 1 * o2yD;
+		//will add vertical acceleration here
+		
 	}
 
 }
