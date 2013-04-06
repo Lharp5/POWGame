@@ -30,7 +30,7 @@ public class Fighter {
 		public void setYSpeed(int y){ ySpeed = y; }	//set a speed relative to how high the player will jump
 		public void yFall(){	ySpeed--;	}	//player will slow down and then fall vertically
 		public void yStop(){	ySpeed = 0;	}
-		public void xAccel(){	xSpeed+= 2;	}	//player will walk faster
+		public void xAccel(){	xSpeed+= 3;	}	//player will walk faster
 		public void xDecel(){	xSpeed--;	}	//player will be slowed down
 		public void xStop(){	xSpeed = 0;	}
 		
@@ -95,6 +95,7 @@ public class Fighter {
 			width = 5; //just for testing changed to width of image?
 			
 			description = "This is a test, this is a test this is a test\nThis is s new line test. Testing testing testing";
+			xDir = 1;
 		}
 		
 		public void hurt(int d){
