@@ -4,7 +4,9 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -14,7 +16,8 @@ public class LauncherView extends JPanel {
 	private JPanel playerOnePanel, playerTwoPanel;
 	private JButton[] p1Character, p2Character;
 	private JButton startGame, p1Ready, p2Ready;
-	private JTextArea p1Desc, p2Desc;
+	private JTextArea p1Desc, p1Stats, p2Desc, p2Stats;
+	private JLabel p1Image, p2Image;
 	
 	private int[] selection;
 	private boolean p1ReadyBool, p2ReadyBool;
@@ -130,7 +133,31 @@ public class LauncherView extends JPanel {
 		p1Const.weighty = 1;
 		player1Layout.setConstraints(p1Desc, p1Const);
 		playerOnePanel.add(p1Desc);
+		p1Desc.setEditable(false);
 		
+		p1Stats = new JTextArea();
+		p1Const.gridx = 3;
+		p1Const.gridy = 18;
+		p1Const.gridwidth = 2;
+		p1Const.gridheight = 1;
+		p1Const.fill = GridBagConstraints.BOTH;
+		p1Const.weightx = 0;
+		p1Const.weighty = 0;
+		player1Layout.setConstraints(p1Stats, p1Const);
+		playerOnePanel.add(p1Stats);
+		p1Stats.setEditable(false);
+		
+		// Label
+		p1Image = new JLabel(new ImageIcon("res/portraits/unknown.png"));
+		p1Const.gridx = 0;
+		p1Const.gridy = 18;
+		p1Const.gridwidth = 3;
+		p1Const.gridheight = 1;
+		p1Const.fill = GridBagConstraints.NONE;
+		p1Const.weightx = 0;
+		p1Const.weighty = 0;
+		player1Layout.setConstraints(p1Image, p1Const);
+		playerOnePanel.add(p1Image);
 
 		// p2 panel
 		// p2 layout
@@ -175,6 +202,31 @@ public class LauncherView extends JPanel {
 		p2Const.weighty = 1;
 		player2Layout.setConstraints(p2Desc, p2Const);
 		playerTwoPanel.add(p2Desc);
+		p2Desc.setEditable(false);
+		
+		p2Stats = new JTextArea();
+		p2Const.gridx = 3;
+		p2Const.gridy = 18;
+		p2Const.gridwidth = 2;
+		p2Const.gridheight = 1;
+		p2Const.fill = GridBagConstraints.BOTH;
+		p2Const.weightx = 0;
+		p2Const.weighty = 0;
+		player2Layout.setConstraints(p2Stats, p2Const);
+		playerTwoPanel.add(p2Stats);
+		p2Stats.setEditable(false);
+		
+		// Label
+		p2Image = new JLabel(new ImageIcon("res/portraits/unknown.png"));
+		p2Const.gridx = 0;
+		p2Const.gridy = 18;
+		p2Const.gridwidth = 3;
+		p2Const.gridheight = 1;
+		p2Const.fill = GridBagConstraints.NONE;
+		p2Const.weightx = 0;
+		p2Const.weighty = 0;
+		player2Layout.setConstraints(p2Image, p2Const);
+		playerTwoPanel.add(p2Image);
 		
 		update();
 	}

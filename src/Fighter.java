@@ -15,15 +15,22 @@ public class Fighter {
 		private int height;
 		private boolean air;
 		private int width; //width of the character model.
-		private int xPos, yPos;
+		private double xPos, yPos;
+		private int xSpeed, ySpeed;	//used for acceleration
 		private boolean disabled; //for Character effects
 		
 		//set/get methods for Xpos Ypos
-		public void setX(int x){	xPos = x;	}
-		public void setY(int y){	yPos = y;	}
+		public void setX(double x){	xPos = x;	}
+		public void setY(double y){	yPos = y;	}
+		public void setYSpeed(int y){ ySpeed = y; }
+		public void yFall(){ ySpeed--; }
+		public void xAccel(){ xSpeed+= 2; }
+		public void xDecel(){ xSpeed--; }
 		
-		public int getX(){	return xPos;	}
-		public int getY(){	return yPos;	}
+		public int getYSpeed(){ return ySpeed; }
+		public int getXSpeed(){ return xSpeed; }
+		public double getX(){	return xPos;	}
+		public double getY(){	return yPos;	}
 		
 		//getting the basic Attacks
 		public BasicAttack getAttack(int i){	return attacks[i];	}
