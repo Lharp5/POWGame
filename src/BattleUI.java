@@ -13,6 +13,7 @@ public class BattleUI extends JPanel{
 	private Graphics2D g, dbg;
 	private Image dbImage;
 	double o1x, o1y, o2x, o2y;
+	int o1yD, o1xD, o2yD, o2xD;
 	
 	public BattleUI(Fighter p1, Fighter p2, Battle b) {
 		battle = b;
@@ -23,6 +24,7 @@ public class BattleUI extends JPanel{
 		setVisible(true);
 		
 		o1x = o1y = o2x = o2y = 0;
+		o1yD = o1xD = o2yD = o2xD = 1;
 	}
 	
 	public void dbDraw() {
@@ -46,10 +48,26 @@ public class BattleUI extends JPanel{
 	
 	
 	public void update() {
-		o1x += 2;
-		o1y += 0.5;
-		o2x +=0.5;
-		o2y += 1;
+		if (o1x > 1290)
+			o1xD = -1;
+		if (o1x < 0) 
+			o1xD = 1;
+		if (o1y > 730)
+			o1yD = -1;
+		if (o1y < 0) 
+			o1yD = 1;
+		if (o2x > 1290)
+			o2xD = -1;
+		if (o2x < 0) 
+			o2xD = 1;
+		if (o2y > 730)
+			o2yD = -1;
+		if (o2y < 0) 
+			o2yD = 1;
+		o1x += 2 * o1xD;
+		o1y += 0.5 * o1yD;
+		o2x +=0.5 * o2xD;
+		o2y += 1 * o2yD;
 	}
 
 }
