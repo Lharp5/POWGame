@@ -50,7 +50,14 @@ public class BattleController extends JFrame implements ActionListener{
 		System.out.println(key);
 		//p1Controls
 		if (key.equals("A")) {
-			player1.setX(player1.getX() - 10 * player1.getSpeed());
+			if (player1.getxDir() == 1) {
+				player1.setDirB();
+				player1.xStop();
+			}
+			if(player1.getXSpeed() < 15)
+				player1.xAccel();
+			
+			
 		}
 		if (key.equals("W")) {
 			if(!player1.inAir()) {
@@ -59,7 +66,12 @@ public class BattleController extends JFrame implements ActionListener{
 			}
 		}
 		if (key.equals("D")) {
-			player1.setX(player1.getX() + 10 * player1.getSpeed());
+			if (player1.getxDir() == -1) {
+				player1.setDirF();
+				player1.xStop();
+			}
+			if(player1.getXSpeed() < 15)
+				player1.xAccel();
 		}
 		if (key.equals("S")) {
 			//P1 duck/block

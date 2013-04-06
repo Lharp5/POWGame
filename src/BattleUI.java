@@ -58,6 +58,14 @@ public class BattleUI extends JPanel{
 			player1.yStop();
 			player1.endJump();
 		}
+		//horizontal movement
+
+		//System.out.println(player1.getXSpeed());
+		System.out.println((player1.getXSpeed() * player1.getxDir()));
+		player1.setX(player1.getX() + (player1.getXSpeed() * player1.getxDir()));
+		if (player1.getXSpeed() != 0) {
+			player1.xDecel();
+		}
 	}
 
 }
