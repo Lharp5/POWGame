@@ -12,6 +12,10 @@ public class BattleUI extends JPanel{
 	private Fighter player1, player2;
 	private Graphics2D g, dbg;
 	private Image dbImage;
+	private boolean p1Moving, p2Moving;
+	
+	public void setP1Move(boolean b) { p1Moving = b; }
+	public void setP2Move(boolean b) { p2Moving = b; }
 	
 	public BattleUI(Fighter p1, Fighter p2, Battle b) {
 		battle = b;
@@ -27,6 +31,8 @@ public class BattleUI extends JPanel{
 		
 		player2.setX(1230);
 		player2.setY(600);
+		
+		p1Moving = p2Moving = false;
 	}
 	
 	public void dbDraw() {
@@ -50,6 +56,15 @@ public class BattleUI extends JPanel{
 	
 	
 	public void update() {
+		if(p1Moving) {
+			if(player1.getXSpeed() < 15)
+				player1.xAccel();
+		}
+		if(p2Moving) {
+			if(player2.getXSpeed() < 15)
+				player2.xAccel();
+		}
+		
 		//will add vertical acceleration here
 		player1.setY(player1.getY() - player1.getYSpeed());
 		if (player1.getY() < 600) {
