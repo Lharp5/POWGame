@@ -90,9 +90,9 @@ public class Fighter {
 			yPos=-99;
 			
 			//to be changed for character model height;
-			height = 10;
+			height = 250;
 			
-			width = 5; //just for testing changed to width of image?
+			width = 75; //just for testing changed to width of image?
 			
 			description = "This is a test, this is a test this is a test\nThis is s new line test. Testing testing testing";
 			xDir = 1;
