@@ -5,6 +5,7 @@ public class Ability {
 	private String name;
 	private int damage;
 	private int range;
+	private int manaCost;
 	private double chargeTime;
 	
 	private boolean stun;
@@ -12,7 +13,7 @@ public class Ability {
 	private boolean knockback;
 	
 	
-	public Ability(String n, int d, int r, double c, boolean st, boolean da, boolean kn){
+	public Ability(String n, int d, int r, double c, boolean st, boolean da, boolean kn, int mc){
 		
 		//name of the ability
 		name = n;
@@ -29,5 +30,7 @@ public class Ability {
 		stun = st;
 		dash =da;
 		knockback =kn;
+		
+		manaCost =mc;
 	}
 }
