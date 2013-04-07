@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 
@@ -52,6 +53,12 @@ public class BattleUI extends JPanel{
 		g2.fillOval((int)player1.getX(), (int)player1.getY()-player1.getHeight(), player1.getWidth(), player1.getHeight()); //p1
 		g2.setColor(Color.BLUE);
 		g2.fillOval((int)player2.getX()-player2.getWidth(), (int)player2.getY()-player2.getHeight(), player2.getWidth(), player2.getHeight()); //p2
+		
+		//health bars
+		Image p1Health = new ImageIcon("res/p1Health.png").getImage();
+		Image p2Health = new ImageIcon("res/p2Health.png").getImage();
+		g2.drawImage(p1Health, 25, 10, this);
+		g2.drawImage(p2Health, 645, 10, this);
 	}
 	
 	
