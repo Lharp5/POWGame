@@ -73,6 +73,30 @@ public class BattleController extends JFrame implements ActionListener{
 			//P1 duck/block
 		}
 		
+		//p2Controls
+		if (key.equals("Left")) {
+			battleUI.setP2Move(true);
+			if (player2.getxDir() == -1) {
+				player2.setDirF();
+				player2.xStop();
+			}
+			
+			
+		}
+		if (key.equals("Up")) {
+			if(!player2.inAir()) {
+				player2.startJump();
+				player2.setYSpeed(20);
+			}
+		}
+		if (key.equals("Right")) {
+			battleUI.setP2Move(true);
+			if (player2.getxDir() == 1) {
+				player2.setDirB();
+				player2.xStop();
+			}
+		}
+		
 		battleUI.update();
 	}
 	
@@ -84,6 +108,12 @@ public class BattleController extends JFrame implements ActionListener{
 		}
 		if (key.equals("D")) {
 			battleUI.setP1Move(false);
+		}
+		if (key.equals("Left")) {
+			battleUI.setP2Move(false);
+		}
+		if (key.equals("Right")) {
+			battleUI.setP2Move(false);
 		}
 	}
 
