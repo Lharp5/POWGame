@@ -49,9 +49,9 @@ public class BattleUI extends JPanel{
 		//testing for flicker
 		g2.fillRect(0, 0, 1290, 730);
 		g2.setColor(Color.RED);
-		g2.fillOval((int)player1.getX(), (int)player1.getY(), 50, 50); //p1
+		g2.fillOval((int)player1.getX(), (int)player1.getY()-player1.getWidth(), player1.getWidth(), player1.getHeight()); //p1
 		g2.setColor(Color.BLUE);
-		g2.fillOval((int)player2.getX(), (int)player2.getY(), 50, 50); //p2
+		g2.fillOval((int)player2.getX()-player2.getWidth(), (int)player2.getY()-player2.getWidth(), player2.getWidth(), player2.getHeight()); //p2
 	}
 	
 	
