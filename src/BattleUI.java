@@ -49,16 +49,16 @@ public class BattleUI extends JPanel{
 		//testing for flicker
 		g2.fillRect(0, 0, 1290, 730);
 		g2.setColor(Color.RED);
-		g2.fillOval((int)player1.getX(), (int)player1.getY()-player1.getWidth(), player1.getWidth(), player1.getHeight()); //p1
+		g2.fillOval((int)player1.getX(), (int)player1.getY()-player1.getHeight(), player1.getWidth(), player1.getHeight()); //p1
 		g2.setColor(Color.BLUE);
-		g2.fillOval((int)player2.getX()-player2.getWidth(), (int)player2.getY()-player2.getWidth(), player2.getWidth(), player2.getHeight()); //p2
+		g2.fillOval((int)player2.getX()-player2.getWidth(), (int)player2.getY()-player2.getHeight(), player2.getWidth(), player2.getHeight()); //p2
 	}
 	
 	
 	public void update() {
 		//P1 movement
 		if(p1Moving) {
-			if(player1.getXSpeed() < 15)
+			if(player1.getXSpeed() < 10)
 				player1.xAccel();
 		}
 		//vertical acceleration here
@@ -77,7 +77,8 @@ public class BattleUI extends JPanel{
 		
 		//P2 Movement
 		if(p2Moving) {
-			if(player2.getXSpeed() < 15)
+			System.out.println(player2.getXSpeed());
+			if(player2.getXSpeed() < 10)
 				player2.xAccel();
 		}
 		//vertical acceleration here
