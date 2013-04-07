@@ -29,9 +29,9 @@ public class FighterPool {
 		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
-		abilities[0] = new Ability("Ability 1A", 30, 15, 0, true, false, false, 10);
-		abilities[1] = new Ability("Ability 2A", 30, 15, 0.5, false, true, false,40);
-		abilities[2] = new Ability("Ability 3A", 30, 15, 1, false, false, true,90);
+		abilities[0] = new Ability("Blast", 30, 15, 0, true, false, false,false, 10);
+		abilities[1] = new Ability("Wave", 30, 15, 0.5, false, true, true,false,40);
+		abilities[2] = new Ability("Purify", 30, 15, 1, false, false, false,true,90);
 		
 		Block block = new Block(2,5);
 		
@@ -44,9 +44,9 @@ public class FighterPool {
 		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
-		abilities[0] = new Ability("Ability 1B", 30, 15, 0, true, false, false, 10);
-		abilities[1] = new Ability("Ability 2B", 30, 15, 0.5, false, true, false,40);
-		abilities[2] = new Ability("Ability 3B", 30, 15, 1, false, false, true,90);
+		abilities[0] = new Ability("RockSmash", 30, 15, 0, false, false, false, false,10);
+		abilities[1] = new Ability("Ability 2B", 30, 15, 0.5, false, true, false, false,40);
+		abilities[2] = new Ability("EarthQuake", 30, 15, 1, true, false, false, false,90);
 		
 		Block block = new Block(2,5);
 		return new Fighter("Earth", attacks, abilities, block, 1);
@@ -58,12 +58,12 @@ public class FighterPool {
 		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);		
 		
 		Ability [] abilities = new Ability[3];
-		abilities[0] = new Ability("Ability 1C", 30, 15, 0, true, false, false, 10);
-		abilities[1] = new Ability("Ability 2C", 30, 15, 0.5, false, true, false,40);
-		abilities[2] = new Ability("Ability 3C", 30, 15, 1, false, false, true,90);
+		abilities[0] = new Ability("Fireball", 30, 15, 0, false, false, false, false, 10);
+		abilities[1] = new Ability("Heat", 30, 15, 0.5, false, false, true, false, 40);
+		abilities[2] = new Ability("Erupt", 30, 15, 1, false, false, false, false,90);
 		
 		Block block = new Block(2,5);
-		return new Fighter("Air", attacks, abilities, block, 1);
+		return new Fighter("Fire", attacks, abilities, block, 1);
 	}
 	
 	private Fighter fighterD(){
@@ -72,12 +72,12 @@ public class FighterPool {
 		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
-		abilities[0] = new Ability("Gale", 30, 15, 0, true, false, false, 10);
-		abilities[1] = new Ability("Gust", 30, 15, 0.5, false, true, false,40);
-		abilities[2] = new Ability("Tornado", 30, 15, 1, false, false, true,90);
+		abilities[0] = new Ability("Gale", 30, 15, 0, false, false, true, false, 10);
+		abilities[1] = new Ability("Gust", 30, 15, 0.5, false, true, false, false, 40);
+		abilities[2] = new Ability("Tornado", 30, 15, 1, true, false, false, false, 90);
 		
 		Block block = new Block(2,5);
-		return new Fighter("Wind", attacks, abilities, block, 1);
+		return new Fighter("Air", attacks, abilities, block, 1);
 	}
 	
 	private Fighter fighterE(){
@@ -87,13 +87,13 @@ public class FighterPool {
 		attacks[1] = new BasicAttack("Kick", 15, 20, 0.5, 2);
 		
 		Ability [] abilities = new Ability[3];
-		abilities[0] = new Ability("Ability 1E", 30, 15, 0, true, false, false, 10);
-		abilities[1] = new Ability("Ability 2E", 30, 15, 0.5, false, true, false,40);
-		abilities[2] = new Ability("Ability 3E", 30, 15, 1, false, false, true,90);
+		abilities[0] = new Ability("Ability ???", 30, 15, 0, true, false, false, false, 10);
+		abilities[1] = new Ability("Ability ???", 30, 15, 0.5, false, true, false, false, 40);
+		abilities[2] = new Ability("Ability ???", 30, 15, 1, false, false, true, false, 90);
 		
 		Block block = new Block(2,5);
 		
-		return new Fighter("FighterE", attacks, abilities, block, 1);
+		return new Fighter("Unknown", attacks, abilities, block, 1);
 	}
 
 }
