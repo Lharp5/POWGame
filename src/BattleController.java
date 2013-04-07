@@ -34,7 +34,9 @@ public class BattleController extends JFrame implements ActionListener{
 		
 		addKeyListener(new KeyListener() {
 			public void keyTyped(KeyEvent e) {}
-			public void keyReleased(KeyEvent e) {}
+			public void keyReleased(KeyEvent e) {
+				releasedKey(e);
+			}
 			public void keyPressed(KeyEvent e) {
 				pressedKey(e);
 			}});
@@ -44,15 +46,13 @@ public class BattleController extends JFrame implements ActionListener{
 		@SuppressWarnings("static-access")
 		String key = e.getKeyText(e.getKeyCode());
 		
-		System.out.println(key);
 		//p1Controls
 		if (key.equals("A")) {
+			battleUI.setP1Move(true);
 			if (player1.getxDir() == 1) {
 				player1.setDirB();
 				player1.xStop();
 			}
-			if(player1.getXSpeed() < 15)
-				player1.xAccel();
 			
 			
 		}
@@ -63,18 +63,58 @@ public class BattleController extends JFrame implements ActionListener{
 			}
 		}
 		if (key.equals("D")) {
+			battleUI.setP1Move(true);
 			if (player1.getxDir() == -1) {
 				player1.setDirF();
 				player1.xStop();
 			}
-			if(player1.getXSpeed() < 15)
-				player1.xAccel();
 		}
 		if (key.equals("S")) {
 			//P1 duck/block
 		}
 		
+		//p2Controls
+		if (key.equals("Left")) {
+			battleUI.setP2Move(true);
+			if (player2.getxDir() == -1) {
+				player2.setDirF();
+				player2.xStop();
+			}
+			
+			
+		}
+		if (key.equals("Up")) {
+			if(!player2.inAir()) {
+				player2.startJump();
+				player2.setYSpeed(20);
+			}
+		}
+		if (key.equals("Right")) {
+			battleUI.setP2Move(true);
+			if (player2.getxDir() == 1) {
+				player2.setDirB();
+				player2.xStop();
+			}
+		}
+		
 		battleUI.update();
+	}
+	
+	private void releasedKey(KeyEvent e) {
+		@SuppressWarnings("static-access")
+		String key = e.getKeyText(e.getKeyCode());
+		if (key.equals("A")) {
+			battleUI.setP1Move(false);
+		}
+		if (key.equals("D")) {
+			battleUI.setP1Move(false);
+		}
+		if (key.equals("Left")) {
+			battleUI.setP2Move(false);
+		}
+		if (key.equals("Right")) {
+			battleUI.setP2Move(false);
+		}
 	}
 
 	@Override

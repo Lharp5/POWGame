@@ -12,6 +12,10 @@ public class BattleUI extends JPanel{
 	private Fighter player1, player2;
 	private Graphics2D g, dbg;
 	private Image dbImage;
+	private boolean p1Moving, p2Moving;
+	
+	public void setP1Move(boolean b) { p1Moving = b; }
+	public void setP2Move(boolean b) { p2Moving = b; }
 	
 	public BattleUI(Fighter p1, Fighter p2, Battle b) {
 		battle = b;
@@ -27,6 +31,8 @@ public class BattleUI extends JPanel{
 		
 		player2.setX(1230);
 		player2.setY(600);
+		
+		p1Moving = p2Moving = false;
 	}
 	
 	public void dbDraw() {
@@ -50,7 +56,12 @@ public class BattleUI extends JPanel{
 	
 	
 	public void update() {
-		//will add vertical acceleration here
+		//P1 movement
+		if(p1Moving) {
+			if(player1.getXSpeed() < 15)
+				player1.xAccel();
+		}
+		//vertical acceleration here
 		player1.setY(player1.getY() - player1.getYSpeed());
 		if (player1.getY() < 600) {
 			player1.yFall();
@@ -59,10 +70,32 @@ public class BattleUI extends JPanel{
 			player1.endJump();
 		}
 		//horizontal movement
+<<<<<<< HEAD
 
+=======
+>>>>>>> BattleUI
 		player1.setX(player1.getX() + (player1.getXSpeed() * player1.getxDir()));
 		if (player1.getXSpeed() != 0) {
 			player1.xDecel();
+		}
+		
+		//P2 Movement
+		if(p2Moving) {
+			if(player2.getXSpeed() < 15)
+				player2.xAccel();
+		}
+		//vertical acceleration here
+		player2.setY(player2.getY() - player2.getYSpeed());
+		if (player2.getY() < 600) {
+			player2.yFall();
+		} else {
+			player2.yStop();
+			player2.endJump();
+		}
+		//horizontal movement
+		player2.setX(player2.getX() - (player2.getXSpeed() * player2.getxDir()));
+		if (player2.getXSpeed() != 0) {
+			player2.xDecel();
 		}
 	}
 
