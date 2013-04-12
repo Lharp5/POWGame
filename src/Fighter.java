@@ -19,6 +19,7 @@ public class Fighter {
 		private int xSpeed, ySpeed;	//used for acceleration
 		private int xDir;	//1 is forwards, -1 is backwards
 		private boolean disabled; //for Character effects
+		private boolean moving;
 		
 		//set/get methods for Xpos Ypos
 		public void setX(double x){	xPos = x;	}
@@ -33,6 +34,7 @@ public class Fighter {
 		public void xAccel(){	xSpeed+= 3;	}	//player will walk faster
 		public void xDecel(){	xSpeed--;	}	//player will be slowed down
 		public void xStop(){	xSpeed = 0;	}
+		public void setMoving(boolean move){	moving = move;	}
 		
 		public int getxDir(){	return xDir;	}
 		public int getYSpeed(){ return ySpeed;	}
@@ -101,5 +103,6 @@ public class Fighter {
 		public void hurt(int d){
 			life-=d;
 		}
+		public boolean isMoving() { return moving; }
 
 }
