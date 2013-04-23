@@ -47,7 +47,7 @@ public class BattleController extends JFrame implements ActionListener{
 		String key = e.getKeyText(e.getKeyCode());
 		
 		//p1Controls
-		if (key.equals("A")) {
+		if (key.equals("A") && !player1.isMoving()) {
 			player1.setMoving(true);
 			if (player1.getxDir() == 1) {
 				player1.setDirB();
@@ -62,7 +62,7 @@ public class BattleController extends JFrame implements ActionListener{
 				player1.setYSpeed(20);
 			}
 		}
-		if (key.equals("D")) {
+		if (key.equals("D") && !player1.isMoving()) {
 			player1.setMoving(true);
 			if (player1.getxDir() == -1) {
 				player1.setDirF();
@@ -74,7 +74,7 @@ public class BattleController extends JFrame implements ActionListener{
 		}
 		
 		//p2Controls
-		if (key.equals("Left")) {
+		if (key.equals("Left") && !player2.isMoving()) {
 			player2.setMoving(true);
 			if (player2.getxDir() == 1) {
 				player2.setDirB();
@@ -89,7 +89,7 @@ public class BattleController extends JFrame implements ActionListener{
 				player2.setYSpeed(20);
 			}
 		}
-		if (key.equals("Right")) {
+		if (key.equals("Right") && !player2.isMoving()) {
 			player2.setMoving(true);
 			if (player2.getxDir() == -1) {
 				player2.setDirF();
