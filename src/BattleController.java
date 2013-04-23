@@ -72,6 +72,10 @@ public class BattleController extends JFrame implements ActionListener{
 		if (key.equals("S")) {
 			//P1 duck/block
 		}
+		if(key.equals("C")) {
+			System.out.println("P1 Attacks");
+			battle.PlayerAttack(player1, player2);
+		}
 		
 		//p2Controls
 		if (key.equals("Left") && !player2.isMoving()) {

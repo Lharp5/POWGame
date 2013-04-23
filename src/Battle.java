@@ -31,7 +31,7 @@ public class Battle {
 		else{ //exact same as first but for in air basic attack
 			if((attacker.getX()+attacker.getAttack(1).getRange() >= defender.getX()-defender.getWidth())
 					&&(attacker.getY()<defender.getY()+defender.getHeight())) 
-				damage=attacker.getAttack(0).getDamage();
+				damage=attacker.getAttack(1).getDamage();
 			else
 				damage=0;
 		}
