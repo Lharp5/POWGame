@@ -59,7 +59,6 @@ public class BattleUI extends JPanel{
 		g2.setColor(Color.RED);
 		double p1HealthBar = 610 * (player1.getLife() / p1MaxLife);
 		double p2HealthBar = 610 * (player2.getLife() / p2MaxLife);
-		System.out.println("P1: " + p1HealthBar + " P2: " + p2HealthBar);
 		g2.fillRect((int) (640-p1HealthBar), 15, (int) p1HealthBar, 15);
 		g2.fillRect(650, 15, (int) p2HealthBar, 15);
 		Image p1Health = new ImageIcon("res/p1Health.png").getImage();
